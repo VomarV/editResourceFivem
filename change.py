@@ -33,5 +33,11 @@ def process_files(directory):
         print(f"Processed and renamed: {file_path} -> {new_file_path}")
 
 # تحديد المسار الرئيسي الذي ترغب في معالجة الملفات داخله
-main_directory = 'D:/Dev/MyFile/NewQB/resources'
+while True:
+    main_directory = input("Enter the main directory path: ").replace('\\', '/')
+    if main_directory.strip(): # تحقق من أن الإدخال ليس فارغًا
+        break
+    else:
+        print("Error: Path cannot be empty. Please enter a valid path.")
+
 process_files(main_directory)
